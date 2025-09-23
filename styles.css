@@ -60,6 +60,44 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Sub Navigation Bar */
+.sub-navigation {
+    padding: 0 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sub-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 0;
+}
+
+.sub-nav-item {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+}
+
+.sub-nav-item:hover {
+    color: #0056b3;
+    background-color: #f8f9fa;
+    border-bottom-color: #dee2e6;
+}
+
+.sub-nav-item.active {
+    color: #fff;
+    background-color: #007bff;
+    border-bottom-color: #0056b3;
+    font-weight: 600;
+}
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -70,16 +108,16 @@ body {
     display: block;
     padding: 16px 24px;
     text-decoration: none;
-    color: #888;
-    font-weight: 400;
+    color: #007bff;
+    font-weight: 500;
     transition: all 0.2s ease;
     border-bottom: 3px solid transparent;
     background-color: transparent;
 }
 
 .nav-item:hover {
-    color: #555;
-    background-color: #e9ecef;
+    color: #0056b3;
+    background-color: #f8f9fa;
 }
 
 .nav-item.active {
@@ -93,8 +131,6 @@ body {
 /* Breadcrumbs */
 .breadcrumbs {
     padding: 12px 40px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
     font-size: 14px;
 }
 
@@ -171,9 +207,25 @@ body {
     text-decoration: underline;
 }
 
+.places-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: disc;
+    columns: 3;
+    column-gap: 40px;
+    column-fill: balance;
+}
+
+.places-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    break-inside: avoid;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
-    .header, .navigation, .breadcrumbs, .content {
+    .header, .navigation, .sub-navigation, .breadcrumbs, .content {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -202,7 +254,18 @@ body {
         gap: 0;
     }
     
+    .sub-nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+    
     .content h1 {
         font-size: 28px;
     }
+    
+    .places-list {
+        columns: 2;
+        column-gap: 20px;
+    }
+}
 }
